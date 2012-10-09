@@ -4,26 +4,22 @@
         <script src="js/jquery-1.8.2.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="js/Heartstring.js"></script>
+        <script src="js/ToC.js"></script>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link type="text/css" href="css/styles.css" rel="stylesheet" />
     </head>
 
-    <body data-spy="scroll" data-target=".ws-toc">
+    <body>
         <script type="text/javascript">
             $(document).ready(function() {
-                var sections = $('section');
-                $.each(sections, function(index, e) {
-                    var section = $(e);  //turn <section> to a jQuery object
-                    //use index to generate unique class name to map ToC
-                    var bookmarkName = 'hs-toc-' + index;
-                    var chapterName = section.find(':header').first().clone();
-                    var tocList = $('.ws-toc ul');
-                    section.attr('id', bookmarkName);
-                    tocList.append(
-                        $('<li>').append(
-                            $('<a>').attr('href','#' + bookmarkName).append(chapterName)
-                    ));
-                });
+                var tocConfig = {
+                    selectors: {
+                        navbar: "ws-toc",  //the menu bar
+                        articles: "ws-story",
+                        bookmarkPrefix: "ws-toc"  //note, must be followed by a dash at the end.
+                    }
+                }
+                Heartstring.ToC.init("", tocConfig);
             });
         </script>
 <div class="container">
