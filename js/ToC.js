@@ -24,6 +24,16 @@ Heartstring.ToC = function (container, config) {
             ));
         });
     };
+    
+    /**
+     * Setup Bootstrap scrollspy attributes
+     * Add the following to body tag: data-spy="scroll" data-target=".ws-toc"
+     * Refer to bootstrap manual: http://twitter.github.com/bootstrap/javascript.html#scrollspy
+     */
+    that.setupScrollspy = function () {
+        $('body').attr('data-spy', 'scroll');
+        $('body').attr('data-target', '.' + that.config.selectors.navbar);
+    };
      
     return that;
 }
@@ -34,6 +44,8 @@ Heartstring.ToC = function (container, config) {
 Heartstring.ToC.init = function(container, config) {    
     // create this component
     var that = Heartstring.ToC(container, config);
+    // Add scrollspy attributes to <body>
+    that.setupScrollspy();
     that.generateMenu();
 };
 
