@@ -6,7 +6,7 @@ Writersky Table of Contents for stories
 # Usage #
 You will need to initialize the component by calling `Heartstring.ToC.init("container", config);`.  If you don't have any custom configurations, the component will use the default. An example is listed below:
 
-``
+```
 $(document).ready(function() {
     var tocConfig = {
         selectors: {
@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
     Heartstring.ToC.init("", tocConfig);
 });
-``
+```
 
 # Markup #
 * Name your navigation menu:
