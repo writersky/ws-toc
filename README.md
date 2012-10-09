@@ -40,10 +40,10 @@ $(document).ready(function() {
 # Config #
 ## Selectors ##
 ### navbar ###
-*navbar* is the selector to the navigation menu.  This is the container where the component finds the <ul> tag, and use that to map the table of content links.
+*navbar* is the selector to the navigation menu.  This is the container where the component finds the `<ul>` tag, and use that to map the table of content links.
 
 ### articles ###
-*articles* is the container that contains all the sections for the chapters.  Usually this is the <article> tag.
+*articles* is the container that contains all the sections for the chapters.  Usually this is the `<article>` tag.
 
 ### bookmarkPrefix ###
 This prefix is used by the component to generate the bookmark links between the navigation bar and the articles ID.  Normally, you don't have to change this.
